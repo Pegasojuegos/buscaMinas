@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpgncogetfk7j"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 205.0
+offset_top = 54.0
+offset_right = 927.0
+offset_bottom = 514.0
+text = "hola mundo"
