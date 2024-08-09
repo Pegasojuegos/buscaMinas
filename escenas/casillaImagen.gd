@@ -10,3 +10,7 @@ func _input(event):
 		$".".texture=ResourceLoader.load("res://assets/desmarcada.png");
 		meHicieronClick.emit()
 
+
+func _on_casilla_cambiar_estado(estado):
+	if estado == 'x':
+		$".".texture=ResourceLoader.load("res://assets/bomba.png");

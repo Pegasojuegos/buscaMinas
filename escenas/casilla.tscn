@@ -11,4 +11,5 @@ script = ExtResource("2_fmo41")
 texture = ExtResource("1_ocord")
 script = ExtResource("2_jyo2n")
 
+[connection signal="cambiarEstado" from="." to="casillaImagen" method="_on_casilla_cambiar_estado"]
 [connection signal="meHicieronClick" from="casillaImagen" to="." method="_on_casilla_imagen_me_hicieron_click"]
