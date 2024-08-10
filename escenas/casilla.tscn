@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1ammixokywco"]
 
 [ext_resource type="Texture2D" uid="uid://c880ylr7vovl0" path="res://assets/marcada.png" id="1_ocord"]
-[ext_resource type="Script" path="res://escenas/casilla.gd" id="2_fmo41"]
-[ext_resource type="Script" path="res://escenas/casillaImagen.gd" id="2_jyo2n"]
+[ext_resource type="Script" path="res://Scripts/casilla.gd" id="2_fmo41"]
+[ext_resource type="Script" path="res://Scripts/casillaImagen.gd" id="2_jyo2n"]
 
 [node name="Casilla" type="Node2D"]
 script = ExtResource("2_fmo41")
