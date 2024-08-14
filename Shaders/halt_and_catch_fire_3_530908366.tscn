@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfk8hex7cslmf"]
+
+[ext_resource type="Shader" path="res://Duotone.gdshader" id="1_rs23k"]
+[ext_resource type="Texture2D" uid="uid://bpgrqajt868uv" path="res://Shaders/halt_and_catch_fire-3-530908366.jpg" id="2_kwkh1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1mbj"]
+shader = ExtResource("1_rs23k")
+
+[node name="HaltAndCatchFire-3-530908366" type="Sprite2D"]
+material = SubResource("ShaderMaterial_u1mbj")
+position = Vector2(595, 307)
+scale = Vector2(0.662062, 0.604072)
+texture = ExtResource("2_kwkh1")
