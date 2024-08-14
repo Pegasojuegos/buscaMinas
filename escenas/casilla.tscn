@@ -11,5 +11,10 @@ script = ExtResource("2_fmo41")
 texture = ExtResource("1_ocord")
 script = ExtResource("2_jyo2n")
 
+[node name="esperar" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="cambiarEstado" from="." to="casillaImagen" method="_on_casilla_cambiar_estado"]
 [connection signal="meHicieronClick" from="casillaImagen" to="." method="_on_casilla_imagen_me_hicieron_click"]
+[connection signal="timeout" from="esperar" to="." method="_on_esperar_timeout"]
