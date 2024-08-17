@@ -6,6 +6,12 @@ var casilla_scene: PackedScene = preload("res://escenas/casilla.tscn")
 @export var nBombas = 10
 @export var separacionCasillas: int = 20
 
+#Temporizador
+var minutos: int
+var segundos: int
+@export var totalMinutos: int = 2
+@export var totalSegundos: int = 30
+
 
 func _ready():
 	casillas = Array()
@@ -67,6 +73,8 @@ func _ready():
 		if x > 0 && casillas[x-1][y].contenido!= 'x': 
 			casillas[x-1][y].nBombasCerca += 1
 			casillas[x-1][y].contenido = 'n'
+			
+	reiniciarTemporizador()
 
 
 func _on_casilla_buscar(pos: Vector2):
@@ -95,3 +103,22 @@ func _on_casilla_explosion():
 
 func finJuego(motivo: String):
 	print(motivo)
+	$temporizador.stop()
+
+
+func _on_timer_timeout():
+	if segundos == 0 && minutos == 0: finJuego("Tiempo")
+	else:
+		if segundos == 0:
+			if minutos > 0: 
+				minutos -= 1
+				segundos = 59
+		else: segundos -= 1
+		$Label.text = str(minutos)+":"+str(segundos)
+
+
+func reiniciarTemporizador():
+	minutos = totalMinutos
+	segundos = totalSegundos
+	$Label.text = str(minutos)+":"+str(segundos)
+	$temporizador.start()
