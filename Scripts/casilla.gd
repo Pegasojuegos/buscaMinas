@@ -7,12 +7,15 @@ var pos: Vector2
 
 signal buscar(pos)
 signal cambiarEstado(estado,n)
+signal explosion()
 
 func _on_casilla_imagen_me_hicieron_click():
 	if !desmarcada:
 		cambiarEstado.emit(contenido,nBombasCerca)
 		desmarcada = true
-	if contenido == '': buscar.emit(pos)
+	match contenido:
+		'': buscar.emit(pos)
+		'x': explosion.emit()
 
 func desmarcar():
 	desmarcada = true

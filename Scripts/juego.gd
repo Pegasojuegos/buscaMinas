@@ -23,6 +23,7 @@ func _ready():
 			casilla.pos = Vector2(i,j)
 			#Conectamos la señal buscar de casilla con un receptor aquí en juego
 			casilla.connect("buscar", Callable(self, "_on_casilla_buscar"))
+			casilla.connect("explosion", Callable(self, "_on_casilla_explosion"))
 			#Guadamos la casilla creada en la matriz
 			casillas[i].append(casilla)
 	
@@ -87,3 +88,10 @@ func _on_casilla_buscar(pos: Vector2):
 		casillas[x][y-1].desmarcar()
 	if x > 0 && casillas[x-1][y].contenido != 'x' && !casillas[x-1][y].desmarcada: 
 		casillas[x-1][y].desmarcar()
+
+
+func _on_casilla_explosion():
+	finJuego('boom')
+
+func finJuego(motivo: String):
+	print(motivo)
