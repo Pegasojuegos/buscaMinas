@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnd2pnbq2x62p"]
+
+[ext_resource type="Script" path="res://Scripts/juego.gd" id="1_0yrkn"]
+
+[node name="Juego" type="Node2D"]
+script = ExtResource("1_0yrkn")
+totalMinutos = 0
+totalSegundos = 5
+
+[node name="contenedorCasillas" type="Node2D" parent="."]
+position = Vector2(259, 171)
+
+[node name="temporizador" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 230.0
+offset_top = 23.0
+offset_right = 270.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "a"
+
+[connection signal="timeout" from="temporizador" to="." method="_on_timer_timeout"]
