@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1ammixokywco"]
 
 [ext_resource type="Texture2D" uid="uid://c880ylr7vovl0" path="res://assets/marcada.png" id="1_ocord"]
-[ext_resource type="Script" path="res://escenas/casilla.gd" id="2_fmo41"]
-[ext_resource type="Script" path="res://escenas/casillaImagen.gd" id="2_jyo2n"]
+[ext_resource type="Script" path="res://Scripts/casilla.gd" id="2_fmo41"]
+[ext_resource type="Script" path="res://Scripts/casillaImagen.gd" id="2_jyo2n"]
 
 [node name="Casilla" type="Node2D"]
 script = ExtResource("2_fmo41")
@@ -11,4 +11,10 @@ script = ExtResource("2_fmo41")
 texture = ExtResource("1_ocord")
 script = ExtResource("2_jyo2n")
 
+[node name="esperar" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="cambiarEstado" from="." to="casillaImagen" method="_on_casilla_cambiar_estado"]
 [connection signal="meHicieronClick" from="casillaImagen" to="." method="_on_casilla_imagen_me_hicieron_click"]
+[connection signal="timeout" from="esperar" to="." method="_on_esperar_timeout"]
